@@ -1,89 +1,17 @@
+// Hilbert Curve 3D
+// Aly Castro
+
 var axiom = 'X';
 var sentence = axiom;
 var rules = [];
-// Change this to experiment with the drawing
 var angle = 90;
 var len = 300;
-
 
 rules[0] = {
   a: 'X',
   b: '^\\XF^\\XFX-F^//XFX&F+//XFX-F/X-/'
 };
-/*
-rules[0] = {
-  a: 'P',
-  b: 'I+[P+R]--//[--L]I[++L]-[PR]++PR'
-};
 
-rules[1] = {
-  a: 'I',
-  b: 'FS[//&&L][//^^L]FS'
-};
-
-rules[2] = {
-  a: 'S',
-  b: 'SFS'
-};
-rules[3] = {
-  a: 'L',
-  b: '[`{+f-ff-f+|+f-ff-f}]'
-};
-rules[4] = {
-  a: 'R',
-  b: '[&&&E`/W////W////W////W////W]'
-};
-rules[5] = {
-  a: 'E',
-  b: 'FF'
-};
-rules[6] = {
-  a: 'W',
-  b: '[`^F][{&&&&-f+f|-f+f}]'
-};
-
-
-
-/*
-rules[0] = {
-  a: 'A',
-  b: '[&FL!A]/////`[&F!A]///////`[&FL!A]'
-};
-
-rules[1] = {
-  a: 'F',
-  b: 'S/////F'
-};
-
-rules[2] = {
-  a: 'S',
-  b: 'FL'
-};
-rules[3] = {
-  a: 'L',
-  b: '[```^^^{f}]'
-};
-// Hilbert curve 3d
-/*
-rules[0] = {
-  a: 'A',
-  b: 'B-F+CFC+F-D&F^D-F+&&CFC+F+B//'
-};
-
-rules[1] = {
-  a: 'B',
-  b: 'A&F^CFB^F^D^^-F-D^|F^B|FC^F^A//'
-};
-
-rules[2] = {
-  a: 'C',
-  b: '|D^|F^B-F+C^F^A&&FA&F^C+F+B^F^D//'
-};
-rules[3] = {
-  a: 'D',
-  b: '|CFB-F+B|FA&F^A&&FB-F+B|FC//'
-};
-*/
 function setup() {
   createCanvas(1000, 1000,WEBGL);
   background(210);
@@ -94,6 +22,7 @@ function setup() {
   camera(150,-50,150,0,-50,0);
   rotateX(radians(90));
 }
+
 function generate() {
   clear();
   var nextSentence = '';
@@ -112,13 +41,10 @@ function generate() {
     }
   }
   sentence = nextSentence;
-  print(sentence);
- 
   push();
   turtle();
   pop();
   len *= 1/2;
-  //box(30,30,5);
 }
 
 function turtle() {
